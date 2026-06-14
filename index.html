@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Report Table</title>
+    <style>
+		.hidden {
+			display: none;
+		}
+		#mainpage {
+        display: block;
+		}
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            margin: 20px;
+            color: #333;
+        }
+
+        /* Container to manage the table width */
+        .page {
+            max-width: 600px;
+            margin: 0 auto;
+            border: 1px solid #ddd;
+            background-color: #ffffff;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        /* Header Styling */
+        th {
+            background-color: #2c3238;
+            color: #ffffff;
+            font-weight: bold;
+            padding: 12px 8px;
+            font-size: 14px;
+        }
+
+        /* Table Data Styling */
+        td {
+            padding: 12px 8px;
+            border-bottom: 1px solid #eee;
+            font-size: 14px;
+            vertical-align: top;
+            line-height: 1.4;
+        }
+
+        /* Center-align specific columns for better readability */
+        th:nth-child(3), td:nth-child(3),
+        th:nth-child(4), td:nth-child(4),
+        th:nth-child(5), td:nth-child(5) {
+            text-align: center;
+        }
+
+        /* Make Course Code and Grade stand out slightly */
+        td:first-child {
+            font-weight: 500;
+        }
+
+        /* Footer/SGPA Row Styling */
+        .footer-row {
+            background-color: #dbe7e9;
+            font-size: 15px;
+            text-align: center;
+        }
+
+        .footer-row td {
+            border-bottom: none;
+            padding: 15px 60px;
+        }
+        button {
+			background-color: #007bff;
+			color: white;
+			border: none;
+			padding: 10px 20px;
+			font-size: 16px;
+			border-radius: 5px;
+		}
+		.detailsrows {
+            background-color: #dbe7e9;
+        }
+        uppercase-input {
+			text-transform: uppercase;
+		}
+    </style>
+   <script>
+	   function convertion() {
+		var page1=document.getElementById('mainpage');
+		var page2=document.getElementById('respage');
+		var page3=document.getElementById('endpage');
+		document.getElementById('input1').innerText=document.getElementById('regno').value;
+		document.getElementById('input2').innerText=document.getElementById('dob').value;
+		var reg=document.getElementById('regno').value;
+		if (reg=='KIAZSMT001'){document.getElementById('name').innerText=`Abin K Eliyas`;}
+		else if (reg=='KIAZSMT002'){document.getElementById('name').innerText=`Adil Muhammed M`;}
+		else if (reg=='KIAZSMT003'){document.getElementById('name').innerText=`Adithya Das N`;}
+		else if (reg=='KIAZSMT004'){document.getElementById('name').innerText=`Afla T M`;}
+		else if (reg=='KIAZSMT005'){document.getElementById('name').innerText=`Afnidha T`;}
+		else if (reg=='KIAZSMT006'){document.getElementById('name').innerText=`Amrutha.P`;}
+		else if (reg=='KIAZSMT007'){document.getElementById('name').innerText=`Archana. P`;}
+		else if (reg=='KIAZSMT008'){document.getElementById('name').innerText=`Arya.A`;}
+		else if (reg=='KIAZSMT009'){document.getElementById('name').innerText=`Asmila N`;}
+		else if (reg=='KIAZSMT010'){document.getElementById('name').innerText=`Ayisha Shajla`;}
+		else if (reg=='KIAZSMT011'){document.getElementById('name').innerText=`Aysha Shafeena K`;}
+		else if (reg=='KIAZSMT012'){document.getElementById('name').innerText=`CK Muhammed Anshab`;}
+		else if (reg=='KIAZSMT013'){document.getElementById('name').innerText=`Fathima Hidha KT`;}
+		else if (reg=='KIAZSMT014'){document.getElementById('name').innerText=`Fathima Najiya PK`;}
+		else if (reg=='KIAZSMT015'){document.getElementById('name').innerText=`Fathima Nishma A`;}
+		else if (reg=='KIAZSMT016'){document.getElementById('name').innerText=`Fathima Shameela KT`;}
+		else if (reg=='KIAZSMT017'){document.getElementById('name').innerText=`Fathima Shamna K`;}
+		else if (reg=='KIAZSMT018'){document.getElementById('name').innerText=`Fathimath Haifamol M`;}
+		else if (reg=='KIAZSMT019'){document.getElementById('name').innerText=`Hanna Fathima VP`;}
+		else if (reg=='KIAZSMT020'){document.getElementById('name').innerText=`Hannath KT`;}
+		else if (reg=='KIAZSMT021'){document.getElementById('name').innerText=`Hasna K`;}
+		else if (reg=='KIAZSMT022'){document.getElementById('name').innerText=`Kadheeja Rifa PK`;}
+		else if (reg=='KIAZSMT023'){document.getElementById('name').innerText=`Megha A`;}
+		else if (reg=='KIAZSMT024'){document.getElementById('name').innerText=`Mehjabeen.K`;}
+		else if (reg=='KIAZSMT025'){document.getElementById('name').innerText=`Muhammed Aseel P P K`;}
+		else if (reg=='KIAZSMT026'){document.getElementById('name').innerText=`Naja Fathima TP`;}
+		else if (reg=='KIAZSMT027'){document.getElementById('name').innerText=`Ribina P`;}
+		else if (reg=='KIAZSMT028'){document.getElementById('name').innerText=`Rinshiya T`;}
+		else if (reg=='KIAZSMT029'){document.getElementById('name').innerText=`Riya Fathima M P`;}
+		else if (reg=='KIAZSMT030'){document.getElementById('name').innerText=`Romario V`;}
+		else if (reg=='KIAZSMT031'){document.getElementById('name').innerText=`Saakiya Salih`;}
+		else if (reg=='KIAZSMT032'){document.getElementById('name').innerText=`Safa AK`;}
+		else if (reg=='KIAZSMT033'){document.getElementById('name').innerText=`Safa Lumna T P`;}
+		else if (reg=='KIAZSMT034'){document.getElementById('name').innerText=`Sahal T P`;}
+		else if (reg=='KIAZSMT035'){document.getElementById('name').innerText=`Sana Jafar PK`;}
+		else if (reg=='KIAZSMT036'){document.getElementById('name').innerText=`Saranya P`;}
+		else if (reg=='KIAZSMT037'){document.getElementById('name').innerText=`Shahla Thasni. P`;}
+		else if (reg=='KIAZSMT038'){document.getElementById('name').innerText=`Shamila P A`;}
+		else if (reg=='KIAZSMT039'){document.getElementById('name').innerText=`Shanha Sana EK`;}
+		else if (reg=='KIAZSMT040'){document.getElementById('name').innerText=`Suvanditha S`;}
+		page1.style.display = 'none';
+		page2.style.display = 'block';
+		page3.style.display = 'none';
+	   }
+	   function reconvertion() {
+		var page1=document.getElementById('mainpage');
+		var page2=document.getElementById('respage');
+		var page3=document.getElementById('endpage');
+		page2.style.display = 'none';
+		page1.style.display = 'block';
+		page3.style.display = 'none';
+		}
+		function endpage() {
+		var page1=document.getElementById('mainpage');
+		var page2=document.getElementById('respage');
+		var page3=document.getElementById('endpage');
+		page2.style.display = 'none';
+		page1.style.display = 'none';
+		page3.style.display = 'block';
+		}
+   </script>
+</head>
+<body>
+<div id="mainpage" class="hidden">
+<fieldset>
+<h4 align="center">Second semester FYUG Result, Examination held on 06/2026 (2025 Admission)</h4><br>
+&nbsp;&nbsp;Register No.:<br>
+<input id="regno" type="text" class="uppercase-input" oninput="this.value=this.value.toUpperCase();" style="width: 190px; height: 23px;" placeholder="ENTER YOUR REGISTER NO."><br><br>
+&nbsp;&nbsp;Date of birth.<br>
+<input id="dob" type="text" style="width: 190px; height: 23px;"placeholder="ENTER YOUR DOB.">
+<br><br><br><center><button onclick="convertion()">Get Result</button></center>
+<p style="text-align: right;"><button style="background-color: #d90000;">Close</button>&nbsp;&nbsp;</p>
+</fieldset>
+</div>
+<div id="respage" class="hidden">
+	<table>
+	<tr class="detailsrows"><td>&nbsp;Examination:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2nd Semester FYUG June 2026</td></tr>
+	<tr class="detailsrows"><td>&nbsp;Register No.:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="input1"></span></td></tr>
+	<tr class="detailsrows"><td>&nbsp;Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="name"></span></td></tr>
+	<tr class="detailsrows"><td>&nbsp;DOB:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="input2"></span></td></tr>
+    </table>
+    <table>
+        <thead>
+            <tr>
+                <th>Course</th>
+                <th>Credits</th>
+                <th>Grade</th>
+                <th>Credit Point</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>MAJOR</td>
+                <td>4</td>
+                <td>B</td>
+                <td>24</td>
+                <td>Passed</td>
+            </tr>
+            <tr>
+                <td>MINOR 3</td>
+                <td>0</td>
+                <td>D</td>
+                <td>8</td>
+                <td>Failed</td>
+            </tr>
+            <tr>
+                <td>MINOR 4</td>
+                <td>4</td>
+                <td>A</td>
+                <td>32</td>
+                <td>Passed</td>
+            </tr>
+            <tr>
+                <td>AEC 3</td>
+                <td>3</td>
+                <td>P</td>
+                <td>9</td>
+                <td>Passed</td>
+            </tr>
+            <tr>
+                <td>AEC 4</td>
+                <td>3</td>
+                <td>B</td>
+                <td>18</td>
+                <td>Passed</td>
+            </tr>
+            <tr>
+                <td>MDC</td>
+                <td>0</td>
+                <td>D</td>
+                <td>6</td>
+                <td>Failed</td>
+            </tr>
+            <tr class="footer-row">
+                <td colspan="3">SGPA : <b>4.617</b></td>
+                <td colspan="3">GRADE : <b>D</b></td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+	<center><button>Print Result</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button  onclick="reconvertion()">Get Another Result</button></center>
+	<p style="text-align: right;"><button onclick="endpage()">Next</button>&nbsp;&nbsp;</p>
+</div>
+<div id="endpage" class="hidden">
+<center><img src="https://drive.google.com/thumbnail?id=1u1XBAMLUSUMrEZMRDtXiYIIlMFnp3zOY&sz=w350" alt="My Drive Image"></center>
+<center><button onclick="convertion()">Go Back</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button  onclick="reconvertion()">Get Another Result</button></center>
+</div>
+</body>
+</html>
